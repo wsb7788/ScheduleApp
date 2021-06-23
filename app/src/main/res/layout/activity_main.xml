@@ -19,7 +19,15 @@
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
         android:padding="100dp"
+        android:onClick="clclick"
         android:layout_gravity="center"
+        android:id="@+id/text"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="www.naver.com"
+        android:textSize="20sp"
+        android:autoLink="all"/>
 
 </LinearLayout>

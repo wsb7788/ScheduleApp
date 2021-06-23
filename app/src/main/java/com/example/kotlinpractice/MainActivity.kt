@@ -2,6 +2,7 @@ package com.example.kotlinpractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.NumberFormatException
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             .forEach{println(it)}*/
 
         btn.setOnClickListener{
-            Toast.makeText(this,"asdf",Toast.LENGTH_SHORT)
+            Toast.makeText(this,"asdf",Toast.LENGTH_SHORT).show()
         }
     }
     fun sum(a: Int, b: Float) {
@@ -45,6 +46,8 @@ class MainActivity : AppCompatActivity() {
             !is String -> "Not a String"
             else -> "Unknown"
         }
-
+    fun clclick(v : View){
+        text.text = "123"
+    }
 
 }
