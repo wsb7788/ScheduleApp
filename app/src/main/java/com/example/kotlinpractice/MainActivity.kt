@@ -1,6 +1,7 @@
 package com.example.kotlinpractice
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -47,8 +48,10 @@ class MainActivity : AppCompatActivity() {
         imm.hideSoftInputFromWindow(v.windowToken, 0)
 
         // 입력정보 비교
-        if(et_email.text.toString() == "wsb0514@naver.com" && et_password.text.toString() =="1234" && et_name.text.toString() == "가나다" && et_age.text.toString() == "24")
+        if(et_email.text.toString() == "wsb0514@naver.com" && et_password.text.toString() =="1234" && et_name.text.toString() == "가나다" && et_age.text.toString() == "24"){
             Toast.makeText(this, "로그인 성공!!", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, JavaActivity::class.java))
+        }
         else Toast.makeText(this, "로그인 실패 ㅠㅠ", Toast.LENGTH_SHORT).show()
     }
 
