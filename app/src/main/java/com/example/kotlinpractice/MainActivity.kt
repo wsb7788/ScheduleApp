@@ -9,6 +9,7 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethod
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_java.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.NumberFormatException
 
@@ -40,6 +41,12 @@ class MainActivity : AppCompatActivity() {
                 true
             } else false
         }
+
+        var pref = this.getPreferences(0)
+        et_email.setText(pref.getString("이메일", ""))         //.text를 안 쓰는 이유 = 타입이 다르다고 뜸, 저장되어 있지 않으면 ""을 불러옴
+        et_password.setText(pref.getString("비밀번호", ""))
+        et_name.setText(pref.getString("이름", ""))
+        et_age.setText(pref.getString("나이", ""))
     }
 
     fun Login(v: View){
@@ -50,9 +57,21 @@ class MainActivity : AppCompatActivity() {
         // 입력정보 비교
         if(et_email.text.toString() == "wsb0514@naver.com" && et_password.text.toString() =="1234" && et_name.text.toString() == "가나다" && et_age.text.toString() == "24"){
             Toast.makeText(this, "로그인 성공!!", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, JavaActivity::class.java))
+//          startActivity(Intent(this, JavaActivity::class.java))       //같은동작 1
+//          /*var intent = Intent(this, JavaActivity::class.java)                           //같은 동작 2
+          /* intent.putExtra("이름", "고라니")
+           startActivity(intent)*/
+            setContentView(R.layout.activity_java)                                     //같은 동작 3
+            tv_result.text = "반갑다 승빈아"
+            var editor = this.getPreferences(0 ).edit()
+            editor.putString("이메일", "wsb0514@naver.com").apply()
+            editor.putString("비밀번호", "1234").apply()
+            editor.putString("이름", "가나다").apply()
+            editor.putString("나이", "24").apply()
         }
+
         else Toast.makeText(this, "로그인 실패 ㅠㅠ", Toast.LENGTH_SHORT).show()
+
     }
 
 
