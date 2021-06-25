@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         var pref = this.getPreferences(0)
-        et_email.setText(pref.getString("이메일", ""))         //.text를 안 쓰는 이유 = 타입이 다르다고 뜸, 저장되어 있지 않으면 ""을 불러옴
+        et_email.setText(pref.getString("이메일", ""))         //.text를 안 쓰는 이유 = 타입이 다르다고 뜸, 저장되어 있지 않으면 ""을 저장함
         et_password.setText(pref.getString("비밀번호", ""))
         et_name.setText(pref.getString("이름", ""))
         et_age.setText(pref.getString("나이", ""))
