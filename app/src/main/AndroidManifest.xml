@@ -10,7 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinPractice">
         <activity android:name=".JavaActivity"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".EditTextActivity"/>
+        <activity android:name=".ImageViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
