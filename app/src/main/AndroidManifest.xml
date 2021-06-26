@@ -14,8 +14,10 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".EditTextActivity"/>
         <activity android:name=".ImageViewActivity"/>
+        <activity android:name=".ScrollViewActivity"/>
 
-        <activity android:name=".ScrollViewActivity">
+
+        <activity android:name=".ListViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
