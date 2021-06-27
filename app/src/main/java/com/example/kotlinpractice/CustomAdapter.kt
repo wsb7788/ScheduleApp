@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 
-class Data(val profile: Int, val name: String)
+class Dataz(val profile: Int, val name: String)
 
 class CustomAdapter(val context: Context, val DataList: ArrayList<Data>) : BaseAdapter() {
     override fun getCount() = DataList.size
