@@ -44,7 +44,7 @@ class CustomAdapterForRecyclerView(val context: Context) :
         holder.name.text = curData.name
 
         holder.itemView.setOnClickListener {
-            Toast.makeText(context, curData.name, Toast.LENGTH_SHORT).show()
+            (context as RecyclerViewActivity).RecyclerClick(curData)
         }
     }
 

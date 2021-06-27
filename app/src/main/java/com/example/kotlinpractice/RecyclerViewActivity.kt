@@ -1,6 +1,7 @@
 package com.example.kotlinpractice
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_recyclerview.*
@@ -17,5 +18,11 @@ class RecyclerViewActivity: AppCompatActivity() {
         recyclerView.adapter = CustomAdapterForRecyclerView(this)
 
 
+
+
+    }
+
+    fun RecyclerClick(curData: Data){
+        Toast.makeText(this, curData.name, Toast.LENGTH_SHORT).show()
     }
 }
