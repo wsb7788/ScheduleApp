@@ -15,8 +15,23 @@ class CustomViewHolder(v: View) : RecyclerView.ViewHolder(v) {
     val name = v.tv_custom
 }
 
-class CustomAdapterForRecyclerView(val DataList: ArrayList<Data>, val context: Context) :
+class CustomAdapterForRecyclerView(val context: Context) :
     RecyclerView.Adapter<CustomViewHolder>() {
+
+    val DataList = arrayListOf(                             //데이터까지도 여기서 처리할 수 있음
+        Data(R.drawable.example_resize, "0번"),
+        Data(R.drawable.example_resize, "1번"),
+        Data(R.drawable.example_resize, "2번"),
+        Data(R.drawable.example_resize, "3번"),
+        Data(R.drawable.example_resize, "4번"),
+        Data(R.drawable.example_resize, "5번"),
+        Data(R.drawable.example_resize, "6번"),
+        Data(R.drawable.example_resize, "7번"),
+        Data(R.drawable.example_resize, "8번"),
+        Data(R.drawable.example_resize, "9번"),
+        Data(R.drawable.example_resize, "10번"),
+        Data(R.drawable.example_resize, "11번")
+    )
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val cellForRow =
             LayoutInflater.from(context).inflate(R.layout.custom_list, parent, false)
