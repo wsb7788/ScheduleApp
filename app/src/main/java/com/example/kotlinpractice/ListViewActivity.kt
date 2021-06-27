@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_listview.*
 
-class ListViewActivity :AppCompatActivity(){
+class ListViewActivity :AppCompatActivity(){                                            //리스트 뷰의 단점 ; 데이터의 양이 많을 때 랙이 걸림
     var DataList = arrayListOf(
         Data(R.drawable.icecream, "0번"),        //사진 파일을 int 형태로 전달할것
         Data(R.drawable.icecream, "1번"),

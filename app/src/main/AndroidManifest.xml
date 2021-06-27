@@ -15,9 +15,10 @@
         <activity android:name=".EditTextActivity"/>
         <activity android:name=".ImageViewActivity"/>
         <activity android:name=".ScrollViewActivity"/>
+        <activity android:name=".ListViewActivity"/>
 
 
-        <activity android:name=".ListViewActivity">
+        <activity android:name=".RecyclerViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
