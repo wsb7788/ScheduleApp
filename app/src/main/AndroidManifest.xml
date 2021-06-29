@@ -16,10 +16,10 @@
         <activity android:name=".ImageViewActivity"/>
         <activity android:name=".ScrollViewActivity"/>
         <activity android:name=".ListViewActivity"/>
-        <activity android:name=".NavigationViewAndViewPagerActivity"/>
+        <activity android:name=".RecyclerViewActivity"/>
 
 
-        <activity android:name=".RecyclerViewActivity">
+        <activity android:name=".NavigationViewAndViewPagerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
