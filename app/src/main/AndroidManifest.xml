@@ -20,9 +20,10 @@
         <activity android:name=".TabLayoutActivity"/>
         <activity android:name=".SwitchActivity"/>
         <activity android:name=".FloatingActionButtonAndSnackBarActivity"/>
+        <activity android:name=".WebViewActivity"/>
 
 
-        <activity android:name=".WebViewActivity">
+        <activity android:name=".CalenderViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
