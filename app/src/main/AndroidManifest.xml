@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kotlinpractice">
-
+<uses-permission android:name="android.permission.INTERNET"/>
     <application
 
         android:allowBackup="true"
@@ -19,9 +19,10 @@
         <activity android:name=".RecyclerViewActivity"/>
         <activity android:name=".TabLayoutActivity"/>
         <activity android:name=".SwitchActivity"/>
+        <activity android:name=".FloatingActionButtonAndSnackBarActivity"/>
 
 
-        <activity android:name=".FloatingActionButtonAndSnackBarActivity">
+        <activity android:name=".WebViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
