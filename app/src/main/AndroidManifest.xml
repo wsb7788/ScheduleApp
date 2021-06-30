@@ -21,9 +21,10 @@
         <activity android:name=".SwitchActivity"/>
         <activity android:name=".FloatingActionButtonAndSnackBarActivity"/>
         <activity android:name=".WebViewActivity"/>
+        <activity android:name=".CalenderViewActivity"/>
 
 
-        <activity android:name=".CalenderViewActivity">
+        <activity android:name=".SearchViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
