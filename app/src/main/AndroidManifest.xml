@@ -32,9 +32,10 @@
         <activity android:name=".VibrateActivity"/>
         <activity android:name=".PushAlarmActivity"/>
         <activity android:name=".DataStoreAndRemove"/>
+        <activity android:name=".SensorEventAvtivity"/>
 
 
-        <activity android:name=".SensorEventAvtivity">
+        <activity android:name=".FragmentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
