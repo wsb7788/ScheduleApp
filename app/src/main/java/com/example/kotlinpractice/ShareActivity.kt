@@ -17,7 +17,7 @@ class ShareActivity:AppCompatActivity() {
             intent.putExtra(Intent.EXTRA_SUBJECT, title)
             intent.putExtra(Intent.EXTRA_TEXT, "내용")
             startActivity(Intent.createChooser(intent, "공유"))
-            //ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ
+            //ㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹ
 
         }
     }
