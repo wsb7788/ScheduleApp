@@ -33,9 +33,10 @@
         <activity android:name=".PushAlarmActivity"/>
         <activity android:name=".DataStoreAndRemove"/>
         <activity android:name=".SensorEventAvtivity"/>
+        <activity android:name=".FragmentActivity"/>
 
 
-        <activity android:name=".FragmentActivity">
+        <activity android:name=".ShareActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
