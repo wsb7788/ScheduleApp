@@ -10,13 +10,13 @@ class ShareActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vibrate)
 
-        vib_Btn.setOnClickListener {
+        /*vib_Btn.setOnClickListener {
             var intent = Intent()
-            intent.setAction(Intent.ACTION_SEND)
-            intent.setType("text/plain")
+            intent.action = Intent.ACTION_SEND
+            intent.type = "text/plain"
             intent.putExtra(Intent.EXTRA_SUBJECT, title)
             intent.putExtra(Intent.EXTRA_TEXT, "내용")
-            startActivity(Intent.createChooser(intent, "공유"))
+            startActivity(Intent.createChooser(intent, "공유"))*/
 
         }
     }
