@@ -17,15 +17,15 @@ class TabLayoutActivity:AppCompatActivity(){
         viewList.add(layoutInflater.inflate(R.layout.fragment_favorite, null))
         viewList.add(layoutInflater.inflate(R.layout.fragment_profile, null))
 
-        viewPager.adapter = pagerAdapter()
+/*        viewPager.adapter = pagerAdapter()
 
-        tabLayout.setupWithViewPager(viewPager)
+        tabLayout.setupWithViewPager(viewPager)*/
 
 
-
-    }
-
-    inner class pagerAdapter: pagerAdapter(){
 
     }
+
+/*    inner class pagerAdapter: pagerAdapter(){
+
+    }*/
 }

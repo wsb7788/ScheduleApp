@@ -18,9 +18,10 @@
         <activity android:name=".ListViewActivity"/>
         <activity android:name=".RecyclerViewActivity"/>
         <activity android:name=".TabLayoutActivity"/>
+        <activity android:name=".SwitchActivity"/>
 
 
-        <activity android:name=".SwitchActivity">
+        <activity android:name=".FloatingActionButtonAndSnackBarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
