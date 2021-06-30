@@ -30,9 +30,10 @@
         <activity android:name=".NavigationViewActivity"/>
         <activity android:name=".ToolBarActivity"/>
         <activity android:name=".VibrateActivity"/>
+        <activity android:name=".PushAlarmActivity"/>
 
 
-        <activity android:name=".PushAlarmActivity">
+        <activity android:name=".DataStoreAndRemove">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
