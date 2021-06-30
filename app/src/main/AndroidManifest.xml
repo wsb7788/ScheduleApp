@@ -24,9 +24,11 @@
         <activity android:name=".CalenderViewActivity"/>
         <activity android:name=".SearchViewActivity"/>
         <activity android:name=".SpinnerActivity"/>
+        <activity android:name=".NastedScrollViewActivity"/>
+        <activity android:name=".AppBarActivity"/>
 
 
-        <activity android:name=".NastedScrollViewActivity">
+        <activity android:name=".NavigationViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
