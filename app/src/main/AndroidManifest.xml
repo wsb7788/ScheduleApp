@@ -23,9 +23,10 @@
         <activity android:name=".WebViewActivity"/>
         <activity android:name=".CalenderViewActivity"/>
         <activity android:name=".SearchViewActivity"/>
+        <activity android:name=".SpinnerActivity"/>
 
 
-        <activity android:name=".SpinnerActivity">
+        <activity android:name=".NastedScrollViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
