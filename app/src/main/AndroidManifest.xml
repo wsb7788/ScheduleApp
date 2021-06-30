@@ -17,9 +17,10 @@
         <activity android:name=".ScrollViewActivity"/>
         <activity android:name=".ListViewActivity"/>
         <activity android:name=".RecyclerViewActivity"/>
+        <activity android:name=".TabLayoutActivity"/>
 
 
-        <activity android:name=".TabLayoutActivity">
+        <activity android:name=".SwitchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
