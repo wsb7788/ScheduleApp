@@ -23,16 +23,15 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	compileOnly("org.projectlombok:lombok")
-	runtimeOnly("mysql:mysql-connector-java")
-	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa") // <-- 추가됨
+	implementation("org.springframework.boot:spring-boot-starter-jdbc")     // <-- 추가됨
+	implementation("mysql:mysql-connector-java")		// <-- 추가됨
 }
 
 tasks.withType<KotlinCompile> {
