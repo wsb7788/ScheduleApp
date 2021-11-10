@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://3.16.108.224:3306/master?serverTimezone=UTC&characterEncoding=UTF-8
+    username: SB
+    password: 1234
+logging:
+  level:
+    org:
+      springframework: debug
