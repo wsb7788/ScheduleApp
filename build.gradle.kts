@@ -29,9 +29,13 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.6")
 
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.5.6") // <-- 추가됨
-	implementation("org.springframework.boot:spring-boot-starter-jdbc:2.5.6")     // <-- 추가됨
-	implementation("mysql:mysql-connector-java:8.0.25")		// <-- 추가됨
+
+
+	// MySQL
+	implementation("mysql:mysql-connector-java:8.0.25")
+
+	// JPA
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.5.6")
 }
 
 tasks.withType<KotlinCompile> {
