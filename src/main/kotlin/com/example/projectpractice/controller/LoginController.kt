@@ -14,6 +14,7 @@ class LoginController {
     fun login():ResponseEntity<String> {
         print("asd")
         return ResponseEntity.ok("HelloWorld")
+
     }
 
 }
