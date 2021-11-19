@@ -15,6 +15,7 @@ class LoginController {
         print("asd")
         return ResponseEntity.ok("HelloWorld")
 
+
     }
 
 }
