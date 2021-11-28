@@ -1,0 +1,2 @@
+rootProject.name = "Nav + MVVM Practice"
+include ':app'
