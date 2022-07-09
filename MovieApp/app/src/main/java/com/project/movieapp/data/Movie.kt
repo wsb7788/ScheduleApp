@@ -1,6 +1,6 @@
 package com.project.movieapp.data
 
-data class Search(
+data class Movie(
     val Poster: String,
     val Title: String,
     val Type: String,
