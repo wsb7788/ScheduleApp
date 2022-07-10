@@ -12,13 +12,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 31
     buildToolsVersion "33.0.0"
 
     defaultConfig {
         applicationId "com.project.movieapp"
         minSdkVersion 26
-        targetSdkVersion 33
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -37,6 +37,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures{
+        dataBinding = true
     }
 }
 
@@ -67,4 +70,8 @@ dependencies {
 
     //paging 3
     implementation "androidx.paging:paging-runtime-ktx:$paging3_version"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
 }
