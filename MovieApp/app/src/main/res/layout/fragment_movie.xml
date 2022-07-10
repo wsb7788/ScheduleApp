@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <
     </data>
 
     <RelativeLayout
@@ -13,19 +12,19 @@
         tools:context=".ui.movie.MovieFragment">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/movie_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/purple_700"
             app:title="movie Details"
-            app:titleTextColor="@color/white"
-            android:id="@+id/movie_toolbar">
+            app:titleTextColor="@color/white">
 
             <androidx.appcompat.widget.SearchView
+                android:id="@+id/movie_search"
+                style="@style/Widget.AppCompat.SearchView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/movie_search"
-                android:layout_gravity="end"
-                style="@style/Widget.AppCompat.SearchView" />
+                android:layout_gravity="end" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 
