@@ -9,7 +9,7 @@ import com.project.movieapp.utils.Constans
 class MoviePaging(val s: String, private val movieInterface: MovieInterface): PagingSource<Int, Movie>() {
     override fun getRefreshKey(state: PagingState<Int, Movie>): Int? {
         return state.anchorPosition?.let {
-            val anchorPage = state?.closestPageToPosition(it)
+            val anchorPage = state.closestPageToPosition(it)
             anchorPage?.prevKey?.plus(1)?:anchorPage?.nextKey?.minus(1)
         }
     }
@@ -24,6 +24,7 @@ class MoviePaging(val s: String, private val movieInterface: MovieInterface): Pa
                 nextKey = if(data.body()?.Search?.isEmpty()!!) null else page + 1
             )
         }catch (e:Exception){
+            e.printStackTrace()
             LoadResult.Error(e)
         }
     }

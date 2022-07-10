@@ -7,10 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.project.movieapp.MovieViewModel
-import com.project.movieapp.R
 import com.project.movieapp.databinding.FragmentMovieBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,9 +17,9 @@ import dagger.hilt.android.AndroidEntryPoint
 class MovieFragment : Fragment() {
 
 
-    lateinit var binding : FragmentMovieBinding
+    lateinit var binding: FragmentMovieBinding
 
-    val viewModel : MovieViewModel by viewModels()
+    val viewModel: MovieViewModel by viewModels()
 
     val movieAdapter = MoviePagingAdapter()
 
@@ -35,19 +34,18 @@ class MovieFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        binding=  FragmentMovieBinding.inflate(inflater, container, false)
-
-        return inflater.inflate(R.layout.fragment_movie, container, false)
+        binding = FragmentMovieBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         setRecyclerView()
 
-        binding.movieSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        binding.movieSearch.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                query?.let{
-                    viewModel.setQuery(query)
+                query?.let {
+                    viewModel.setQuery(it)
                 }
                 return false
             }
@@ -60,15 +58,20 @@ class MovieFragment : Fragment() {
 
         })
 
-        viewModel.list.observe(viewLifecycleOwner){
-            movieAdapter.submitData(lifecycle,it)
+        movieAdapter.onMovieClick {
+            val action = MovieFragmentDirections.actionMovieFragmentToDetailsFragment()
+            findNavController().navigate(action)
+        }
+
+        viewModel.list.observe(viewLifecycleOwner) {
+            movieAdapter.submitData(lifecycle, it)
         }
     }
 
     private fun setRecyclerView() {
-        binding.movieRecycler.apply{
+        binding.movieRecycler.apply {
             adapter = movieAdapter
-            layoutManager = GridLayoutManager(requireContext(),2)
+            layoutManager = GridLayoutManager(requireContext(), 2)
         }
     }
 }
