@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MovieViewModel @Inject constructor(private val movieInterface: MovieInterface): ViewModel(){
 
-    private val query = MutableLiveData<String>("")
+    private val query = MutableLiveData<String>()
 
     val list = query.switchMap { query ->
         Pager(PagingConfig(10)){

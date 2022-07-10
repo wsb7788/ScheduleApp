@@ -49,12 +49,14 @@ class MovieFragment : Fragment() {
                 query?.let{
                     viewModel.setQuery(query)
                 }
-                return true
+                return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                TODO("Not yet implemented")
+
+                return false
             }
+
 
         })
 

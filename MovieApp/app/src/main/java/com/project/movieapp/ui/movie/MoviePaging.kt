@@ -6,7 +6,7 @@ import com.project.movieapp.data.Movie
 import com.project.movieapp.remote.MovieInterface
 import com.project.movieapp.utils.Constans
 
-class MoviePaging(val s: String, val movieInterface: MovieInterface): PagingSource<Int, Movie>() {
+class MoviePaging(val s: String, private val movieInterface: MovieInterface): PagingSource<Int, Movie>() {
     override fun getRefreshKey(state: PagingState<Int, Movie>): Int? {
         return state.anchorPosition?.let {
             val anchorPage = state?.closestPageToPosition(it)
