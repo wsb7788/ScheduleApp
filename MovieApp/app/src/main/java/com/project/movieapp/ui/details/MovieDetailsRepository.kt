@@ -1,5 +1,6 @@
 package com.project.movieapp.ui.details
 
+import android.util.Log
 import com.project.movieapp.data.moviedetails.MovieDetails
 import com.project.movieapp.remote.MovieInterface
 import com.project.movieapp.utils.Constans
