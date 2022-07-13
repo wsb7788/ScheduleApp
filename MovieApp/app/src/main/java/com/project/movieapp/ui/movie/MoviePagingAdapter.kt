@@ -37,7 +37,7 @@ class MoviePagingAdapter:PagingDataAdapter<Movie,MoviePagingAdapter.MyViewHolder
     override fun onBindViewHolder(holder: MoviePagingAdapter.MyViewHolder, position: Int) {
 
         val data = getItem(position)
-        holder.viewDataBinding.setVariable(BR.movie, getItem(position))
+        holder.viewDataBinding.setVariable(BR.movie, data)
 
 
         holder.viewDataBinding.root.setOnClickListener {

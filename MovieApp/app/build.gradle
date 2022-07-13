@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
 
     //navigation
-    id 'androidx.navigation.safeargs'
+    id 'androidx.navigation.safeargs.kotlin'
 
     //hilt
     id 'kotlin-kapt'

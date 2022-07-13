@@ -47,7 +47,7 @@ class MovieFragment : Fragment() {
                 query?.let {
                     viewModel.setQuery(it)
                 }
-                return false
+                return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
@@ -59,7 +59,7 @@ class MovieFragment : Fragment() {
         })
 
         movieAdapter.onMovieClick {
-            val action = MovieFragmentDirections.actionMovieFragmentToDetailsFragment()
+            val action = MovieFragmentDirections.actionMovieFragmentToDetailsFragment(it)
             findNavController().navigate(action)
         }
 
