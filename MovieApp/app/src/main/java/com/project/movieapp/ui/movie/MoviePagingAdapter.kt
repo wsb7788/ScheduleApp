@@ -10,12 +10,12 @@ import com.project.movieapp.BR
 import com.project.movieapp.data.Movie
 import com.project.movieapp.databinding.ViewHolderMovieBinding
 
-class MoviePagingAdapter:PagingDataAdapter<Movie,MoviePagingAdapter.MyViewHolder>(DIFF_UTIL) {
+class MoviePagingAdapter : PagingDataAdapter<Movie, MoviePagingAdapter.MyViewHolder>(DIFF_UTIL) {
 
-    var onClick : ((String) -> Unit)? = null
+    var onClick: ((String) -> Unit)? = null
 
-    companion object{
-        val DIFF_UTIL = object : DiffUtil.ItemCallback<Movie>(){
+    companion object {
+        val DIFF_UTIL = object : DiffUtil.ItemCallback<Movie>() {
             override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
                 return oldItem.imdbID == newItem.imdbID
             }
@@ -27,11 +27,12 @@ class MoviePagingAdapter:PagingDataAdapter<Movie,MoviePagingAdapter.MyViewHolder
         }
     }
 
-    fun onMovieClick(listener:(String)->Unit){
-        onClick=  listener
+    fun onMovieClick(listener: (String) -> Unit) {
+        onClick = listener
     }
 
-    inner class MyViewHolder(val viewDataBinding:ViewHolderMovieBinding):RecyclerView.ViewHolder(viewDataBinding.root)
+    inner class MyViewHolder(val viewDataBinding: ViewHolderMovieBinding) :
+        RecyclerView.ViewHolder(viewDataBinding.root)
 
 
     override fun onBindViewHolder(holder: MoviePagingAdapter.MyViewHolder, position: Int) {
@@ -41,7 +42,7 @@ class MoviePagingAdapter:PagingDataAdapter<Movie,MoviePagingAdapter.MyViewHolder
 
 
         holder.viewDataBinding.root.setOnClickListener {
-            onClick?.let{
+            onClick?.let {
                 it(data?.imdbID!!)
             }
         }
@@ -51,7 +52,8 @@ class MoviePagingAdapter:PagingDataAdapter<Movie,MoviePagingAdapter.MyViewHolder
         parent: ViewGroup,
         viewType: Int
     ): MoviePagingAdapter.MyViewHolder {
-        val binding = ViewHolderMovieBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ViewHolderMovieBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyViewHolder(binding)
     }
 
