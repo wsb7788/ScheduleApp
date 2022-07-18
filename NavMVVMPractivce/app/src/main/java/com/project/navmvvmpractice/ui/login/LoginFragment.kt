@@ -18,6 +18,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
         super.onCreate(savedInstanceState)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+
+    }
+
 
 
 
