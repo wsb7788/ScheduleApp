@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.login.LoginFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="로그인" />
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/et_id"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_login"
+            tools:text="ID " />
+
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tv_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_id"
+            app:layout_constraintTop_toTopOf="@id/tv_id" />
+
+        <TextView
+            android:id="@+id/tv_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/et_pw"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_id"
+            tools:text="PW " />
+
+        <EditText
+            android:id="@+id/et_pw"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tv_pw"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_pw"
+            app:layout_constraintTop_toTopOf="@id/tv_pw" />
+
+        <Button
+            android:id="@+id/btn_sign_up"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="가입"
+            app:layout_constraintEnd_toStartOf="@id/btn_login"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_pw"
+            app:layout_constraintWidth_percent="0.3" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.3"
+            android:layout_height="wrap_content"
+            android:text="로그인"
+            app:layout_constraintBottom_toBottomOf="@id/btn_sign_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/btn_sign_up"
+            app:layout_constraintTop_toTopOf="@id/btn_sign_up" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

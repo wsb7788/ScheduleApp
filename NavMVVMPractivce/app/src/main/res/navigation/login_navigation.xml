@@ -2,22 +2,21 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_auth"
+    android:id="@+id/navigation"
     app:startDestination="@id/loginFragment">
-
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.triad.mvvmlearning.view.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        android:name="com.project.navmvvmpractice.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
     </fragment>
-
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.triad.mvvmlearning.view.login.SignUpFragment"
-        android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
+        android:name="com.project.navmvvmpractice.ui.login.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up"/>
+
 </navigation>

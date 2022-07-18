@@ -1,9 +1,15 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-apply plugin: "androidx.navigation.safeargs"
-apply plugin: 'dagger.hilt.android.plugin'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
 
+    //navigation
+    id 'androidx.navigation.safeargs.kotlin'
+
+    //hilt
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+
+}
 
 
 android {
