@@ -14,7 +14,7 @@ import com.project.navmvvmpractice.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login),View.OnClickListener, LoginListener {
+class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login), LoginListener {
 
 
     val viewModel: LoginViewModel by viewModels()
@@ -23,8 +23,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         viewModel.loginListener = this
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
-        binding.btnLogin.setOnClickListener(this)
     }
 
     override fun onLoginSucess() {
@@ -35,11 +36,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
 
     }
 
-    override fun onClick(v: View?) {
-        when(v){
-            binding.btnLogin -> viewModel.loginCheck()
 
-        }
+
+    override fun initView() {
+
     }
 
 

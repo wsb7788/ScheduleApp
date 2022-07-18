@@ -22,6 +22,9 @@ abstract class BaseFragment < B:ViewDataBinding>(@LayoutRes private val layoutId
     ): View? {
         binding = DataBindingUtil.inflate(inflater,layoutId, container, false)
         return binding.root
+        initView()
     }
+
+    abstract fun initView()
 
 }
