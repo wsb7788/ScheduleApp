@@ -20,14 +20,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
     val viewModel: LoginViewModel by viewModels()
 
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        viewModel.loginListener = this
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = this
-    }
 
-    override fun onLoginSucess() {
+    override fun onLoginSuccess() {
         findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeNavigation())
     }
 
@@ -35,10 +30,14 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
 
     }
 
-
+    override fun onSignUpClicked() {
+        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSignUpFragment())
+    }
 
     override fun initView() {
-
+        viewModel.loginListener = this
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
     }
 
 
