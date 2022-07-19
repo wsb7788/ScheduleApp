@@ -18,7 +18,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(R.layout.fragment_sig
     }
 
     override fun initView() {
-        TODO("Not yet implemented")
+
     }
 
 

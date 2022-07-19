@@ -25,11 +25,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
         viewModel.loginListener = this
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-
     }
 
     override fun onLoginSucess() {
-        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSignUpFragment())
+        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeNavigation())
     }
 
     override fun onLoginFailure() {

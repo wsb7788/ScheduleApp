@@ -18,7 +18,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     }
 
     override fun initView() {
-        TODO("Not yet implemented")
+
     }
 
 

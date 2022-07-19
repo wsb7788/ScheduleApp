@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_navigation"
+    app:startDestination="@id/splashFragment">
+
+    <include app:graph="@navigation/home_navigation" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.project.navmvvmpractice.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_home_navigation"
+            app:destination="@id/home_navigation" />
+        <action
+            android:id="@+id/action_splashFragment_to_login_navigation"
+            app:destination="@id/login_navigation" />
+    </fragment>
+    <include app:graph="@navigation/login_navigation" />
+</navigation>
