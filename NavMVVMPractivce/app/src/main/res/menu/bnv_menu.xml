@@ -2,7 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/firstFragment"
         android:icon="@drawable/ic_launcher_background"
-        android:title="Home" />
+        android:title="1" />
+    <item
+        android:id="@+id/secondFragment"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="2" />
+    <item
+        android:id="@+id/thirdFragment"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="3" />
 </menu>

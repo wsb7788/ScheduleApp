@@ -20,7 +20,7 @@
         android:id="@+id/signUpFragment"
         android:name="com.project.navmvvmpractice.ui.login.SignUpFragment"
         android:label="SignUpFragment"
-        tools:layout="@layout/fragment_sign_up"/>
+        tools:layout="@layout/fragment_sign_up" />
     <include app:graph="@navigation/home_navigation" />
 
 </navigation>
