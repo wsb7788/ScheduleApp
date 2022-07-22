@@ -9,7 +9,7 @@ import com.project.navmvvmpractice.data.entites.User
 interface UserDao : BaseDao<User> {
 
     @Query("SELECT * FROM User WHERE id = :id")
-    suspend fun findId(id: String): LiveData<MutableList<User>>
+    suspend fun findId(id: String): User?
 
 
 }

@@ -4,6 +4,6 @@ import android.view.View
 
 interface LoginListener {
     abstract fun onLoginSuccess()
-    abstract fun onLoginFailure()
+    abstract fun onLoginFailure(message: String)
     abstract fun onSignUpClicked()
 }

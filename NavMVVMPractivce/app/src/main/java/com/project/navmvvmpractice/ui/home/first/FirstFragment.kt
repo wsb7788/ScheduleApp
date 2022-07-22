@@ -10,7 +10,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class FirstFragment : BaseFragment<FragmentFirstBinding>(R.layout.fragment_first) {
     override fun initView() {
-        Log.d("123","12123123213")
 
     }
 
