@@ -23,18 +23,20 @@ class LoginViewModel @Inject constructor(private val userDatabase:Database) : Vi
 
 
     val id = MutableLiveData<String>("")
+    val pw = MutableLiveData<String>("")
 
 
     fun onLoginClicked() {
         CoroutineScope(Dispatchers.Main).launch {
             try {
                 val id = id.value
+                val pw = pw.value
                 val result = userDatabase.userDao().findId(id!!)
-                result.let {
-                    loginListener!!.onLoginFailure("아이디 및 비밀번호가 일치하지 않습니다.")
+                if(result != null && result.pw == pw!!){
+                    loginListener!!.onLoginSuccess()
                     return@launch
                 }
-                loginListener!!.onLoginSuccess()
+                loginListener!!.onLoginFailure("아이디 및 비밀번호가 일치하지 않습니다.")
             }
             catch (e: Exception){
                 loginListener!!.onLoginFailure(e.message!!)
@@ -44,10 +46,32 @@ class LoginViewModel @Inject constructor(private val userDatabase:Database) : Vi
 
     fun onSignInClicked() {
         loginListener!!.onSignUpClicked()
-
     }
 
     fun onConfirmClicked(){
+        if(id.value.isNullOrEmpty()){
+            signUpListener!!.onFailure("아이디를 입력하세요")
+            return
+        }
+        if(pw.value.isNullOrEmpty()){
+            signUpListener!!.onFailure("비밀번호를 입력하세요")
+            return
+        }
+        CoroutineScope(Dispatchers.Main).launch {
+            try {
+                val id = id.value
+                val pw = pw.value
+                val result = userDatabase.userDao().findId(id!!)
+                result.let {
+                    userDatabase.userDao().insert(User(id!!,pw!!))
+                    signUpListener!!.onSuccess()
+                    return@launch
+                }
+                signUpListener!!.onFailure("아이디가 이미 존재합니다.")
+            }catch (e:Exception){
+                signUpListener!!.onFailure(e.message!!)
+            }
+        }
 
     }
     fun onCancelClicked(){
