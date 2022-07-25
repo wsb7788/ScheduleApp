@@ -1,5 +1,6 @@
 package com.project.navmvvmpractice.ui.home
 
+import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
@@ -33,16 +34,32 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     private fun initToolbar() {
         binding.tbHome.setNavigationIcon(R.drawable.ic_menu_icon)
         binding.tbHome.setNavigationOnClickListener{
-
+            binding.dlHome.openDrawer(binding.navHome)
         }
+        binding.tbHome.setPadding(0,getStatusBarHeight(requireContext()), 0, 0)
 
+
+    }
+    private fun getStatusBarHeight(context: Context): Int {
+        val resourceId = context.resources.getIdentifier("status_bar_height", "dimen", "android")
+
+        return if (resourceId > 0) {
+            context.resources.getDimensionPixelSize(resourceId)
+        } else {
+            0
+        }
+    }
+
+    private fun getNaviBarHeight(context: Context): Int {
+        val resourceId: Int = context.resources.getIdentifier("navigation_bar_height", "dimen", "android")
+        return if (resourceId > 0) {
+            context.resources.getDimensionPixelSize(resourceId)
+        } else {
+            0
+        }
     }
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
 
 
