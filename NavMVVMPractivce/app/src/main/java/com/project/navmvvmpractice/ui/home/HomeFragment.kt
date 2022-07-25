@@ -26,7 +26,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     override fun initView() {
         val asd = childFragmentManager.findFragmentById(R.id.fcv_home) as NavHostFragment
-        NavigationUI.setupWithNavController(binding.bnvHome,asd.navController)
+        NavigationUI.setupWithNavController(binding.navHome,asd.navController)
 
     }
 
