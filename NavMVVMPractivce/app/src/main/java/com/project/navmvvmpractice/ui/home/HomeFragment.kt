@@ -6,23 +6,47 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.*
+import android.view.View.GONE
+import android.view.View.VISIBLE
+import android.view.animation.AnimationUtils
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.project.navmvvmpractice.BaseFragment
 import com.project.navmvvmpractice.R
+import com.project.navmvvmpractice.data.remote.home.HomeListener
 import com.project.navmvvmpractice.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), HomeListener {
 
-
+    val viewModel : HomeViewModel by viewModels()
 
     override fun initView() {
         initNav()
         initToolbar()
+        viewModel.homeListener = this
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+        observePlus()
+
+    }
+
+    private fun observePlus() {
+        viewModel.isExpended.observe(this){
+            if(it){
+                binding.fabPlus.animate().rotation(45f).setDuration(300).start()
+                binding.fabTodo.visibility = VISIBLE
+                binding.fabAlarm.visibility = VISIBLE
+            }else{
+                binding.fabPlus.animate().rotation(0f).setDuration(300).start()
+                binding.fabTodo.visibility = GONE
+                binding.fabAlarm.visibility = GONE
+            }
+        }
     }
 
     private fun initNav() {
@@ -62,9 +86,17 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         }
     }
 
+    override fun onPlusClicked() {
 
+    }
 
+    override fun onTodoClicked() {
 
+    }
+
+    override fun onAlarmClicked() {
+
+    }
 
 
 }
