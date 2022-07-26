@@ -1,14 +1,9 @@
 package com.project.navmvvmpractice.ui.login
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.project.navmvvmpractice.BaseFragment
+import com.project.navmvvmpractice.base.BaseFragment
 import com.project.navmvvmpractice.R
 import com.project.navmvvmpractice.data.remote.login.SignUpListener
 import com.project.navmvvmpractice.databinding.FragmentSignUpBinding

@@ -1,4 +1,4 @@
-package com.project.navmvvmpractice.room.dao
+package com.project.navmvvmpractice.base
 
 import androidx.room.Dao
 import androidx.room.Insert

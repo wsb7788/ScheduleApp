@@ -1,4 +1,4 @@
-package com.project.navmvvmpractice
+package com.project.navmvvmpractice.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,13 +8,10 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 abstract class BaseFragment < B:ViewDataBinding>(@LayoutRes private val layoutId: Int): Fragment() {
 
     protected lateinit var binding : B
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

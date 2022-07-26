@@ -1,8 +1,8 @@
 package com.project.navmvvmpractice.room.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
+import com.project.navmvvmpractice.base.BaseDao
 import com.project.navmvvmpractice.data.entites.User
 
 @Dao

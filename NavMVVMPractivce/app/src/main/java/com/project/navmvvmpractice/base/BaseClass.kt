@@ -1,4 +1,4 @@
-package com.project.navmvvmpractice
+package com.project.navmvvmpractice.base
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

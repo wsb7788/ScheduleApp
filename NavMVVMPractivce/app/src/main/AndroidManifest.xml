@@ -3,22 +3,27 @@
     package="com.project.navmvvmpractice">
 
     <application
+        android:name=".base.BaseClass"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".BaseClass"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NavMVVMPractice">
-        <activity android:name=".MainActivity"
-            android:theme="@style/Theme.SeeMeet.TransparentStatusBar"
-            android:exported="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SeeMeet.TransparentStatusBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.home.todo.AddTodoActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

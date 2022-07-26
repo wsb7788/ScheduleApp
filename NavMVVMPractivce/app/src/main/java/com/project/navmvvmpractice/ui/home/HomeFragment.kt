@@ -1,23 +1,19 @@
 package com.project.navmvvmpractice.ui.home
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
-import android.os.Bundle
+import android.content.Intent
 import android.view.*
 import android.view.View.GONE
 import android.view.View.VISIBLE
-import android.view.animation.AnimationUtils
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import com.project.navmvvmpractice.BaseFragment
+import com.project.navmvvmpractice.base.BaseFragment
 import com.project.navmvvmpractice.R
 import com.project.navmvvmpractice.data.remote.home.HomeListener
 import com.project.navmvvmpractice.databinding.FragmentHomeBinding
+import com.project.navmvvmpractice.ui.home.todo.AddTodoActivity
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_home.view.*
 
 
 @AndroidEntryPoint
@@ -26,11 +22,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
     val viewModel : HomeViewModel by viewModels()
 
     override fun initView() {
-        initNav()
-        initToolbar()
         viewModel.homeListener = this
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+
+        initNav()
+        initToolbar()
         observePlus()
 
     }
@@ -91,7 +88,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
     }
 
     override fun onTodoClicked() {
-
+        val intent = Intent(requireContext(),AddTodoActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onAlarmClicked() {
