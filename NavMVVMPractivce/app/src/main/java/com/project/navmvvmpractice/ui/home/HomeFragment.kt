@@ -37,6 +37,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
             binding.dlHome.openDrawer(binding.navHome)
         }
         binding.tbHome.setPadding(0,getStatusBarHeight(requireContext()), 0, 0)
+        val param = binding.fcvHome.layoutParams as ViewGroup.MarginLayoutParams
+        param.setMargins(0,0,0,getNaviBarHeight(requireContext()))
+        binding.fcvHome.layoutParams = param
 
 
     }
