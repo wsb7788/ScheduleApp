@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_bottom_navigation"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/TodoFragment">
     <fragment
-        android:id="@+id/firstFragment"
-        android:name="com.project.navmvvmpractice.ui.home.first.FirstFragment"
+        android:id="@+id/TodoFragment"
+        android:name="com.project.navmvvmpractice.ui.home.todo.TodoFragment"
         android:label="FirstFragment"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_todo" />
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.project.navmvvmpractice.ui.home.second.SecondFragment"

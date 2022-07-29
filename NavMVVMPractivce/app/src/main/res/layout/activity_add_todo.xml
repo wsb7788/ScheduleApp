@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="viewModel"
+            type="com.project.navmvvmpractice.ui.home.todo.AddTodoViewModel" />
 
     </data>
 
@@ -17,6 +20,7 @@
             android:src="@drawable/ic_cancel"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{() -> viewModel.onCancelClicked()}"
             android:layout_margin="20dp"
             android:id="@+id/btn_cancel"/>
         <ImageView
@@ -26,6 +30,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="20dp"
             app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="@{() -> viewModel.onConfirmClicked()}"
             android:id="@+id/btn_confirm"
             app:tint="#ff0000" />
 
@@ -59,9 +64,10 @@
             android:singleLine="true"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
+            android:text="@={viewModel.todo}"
             app:layout_constraintBottom_toBottomOf="@id/tv_todo_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_todo_title"
+            app:layout_constraintTop_toTopOf="@id/tv_todo_title"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
