@@ -32,6 +32,9 @@ object HiltModule {
     fun provideUserDao(appDatabase: Database) = appDatabase.userDao()
 
     @Provides
+    fun provideTodoDao(appDatabase: Database) = appDatabase.todoDao()
+
+    @Provides
     @Singleton
     fun provideDataStore(@ApplicationContext context: Context): DataStoreManager =
         DataStoreManager(context)

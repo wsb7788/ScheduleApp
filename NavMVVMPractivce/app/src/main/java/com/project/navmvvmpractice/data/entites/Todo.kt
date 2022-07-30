@@ -19,7 +19,8 @@ import kotlinx.android.parcel.Parcelize
 ])
 @Parcelize
 data class Todo(
-    @PrimaryKey(autoGenerate = false)
+    @PrimaryKey(autoGenerate = true)
+    val index:Long = 0L,
     val id: String,
     val task:String
 ) : Parcelable

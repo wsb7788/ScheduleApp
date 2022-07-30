@@ -10,6 +10,4 @@ interface UserDao : BaseDao<User> {
 
     @Query("SELECT * FROM User WHERE id = :id")
     suspend fun findId(id: String): User?
-
-
 }

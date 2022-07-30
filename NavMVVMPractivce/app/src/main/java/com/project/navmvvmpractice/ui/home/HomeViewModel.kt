@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val dataStoreManager: DataStoreManager):ViewModel() {
+class HomeViewModel @Inject constructor():ViewModel() {
 
     var homeListener : HomeListener? = null
     var isExpended = MutableLiveData<Boolean>(false)
@@ -22,16 +22,9 @@ class HomeViewModel @Inject constructor(private val dataStoreManager: DataStoreM
         isExpended.value = !value!!
     }
      fun onTodoClicked(){
-         CoroutineScope(Dispatchers.Main).launch{
-             try {
 
-                 homeListener!!.onTodoClicked(dataStoreManager.getId())
-             }catch (e:Exception){
-                 homeListener!!.onTodoClicked(e.message!!)
-             }
-         }
-
-    }
+         homeListener!!.onTodoClicked()
+     }
      fun onAlarmClicked(){
         homeListener!!.onAlarmClicked()
     }

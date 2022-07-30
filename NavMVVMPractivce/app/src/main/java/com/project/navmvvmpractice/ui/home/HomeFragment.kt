@@ -88,8 +88,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
 
     }
 
-    override fun onTodoClicked(message:String) {
-        Toast.makeText(requireContext(),message,Toast.LENGTH_SHORT).show()
+    override fun onTodoClicked() {
         val intent = Intent(requireContext(),AddTodoActivity::class.java)
         startActivity(intent)
     }
