@@ -19,7 +19,7 @@ class AddTodoViewModel @Inject constructor(private val database: Database, priva
     var addTodoListener : AddTodoListener? = null
 
     fun onCancelClicked(){
-
+        addTodoListener!!.onCancelClicked()
     }
     fun onConfirmClicked(){
         CoroutineScope(Dispatchers.Main).launch {
@@ -30,9 +30,8 @@ class AddTodoViewModel @Inject constructor(private val database: Database, priva
             }
             try {
                 val id = dataStoreManager.getId()
-                database.todoDao().insert(Todo(id = id,task = todo!!))
+                database.todoDao().insert(Todo(id = id,task = todo))
                 addTodoListener!!.onSuccess()
-
             }catch (e:Exception){
                 addTodoListener!!.onFailure(e.message!!)
             }

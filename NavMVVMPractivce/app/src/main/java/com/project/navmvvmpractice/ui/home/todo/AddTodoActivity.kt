@@ -9,6 +9,7 @@ import com.project.navmvvmpractice.base.BaseActivity
 import com.project.navmvvmpractice.data.remote.home.todo.AddTodoListener
 import com.project.navmvvmpractice.databinding.ActivityAddTodoBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlin.system.exitProcess
 
 @AndroidEntryPoint
 class AddTodoActivity : BaseActivity<ActivityAddTodoBinding>(R.layout.activity_add_todo), AddTodoListener {
@@ -24,11 +25,11 @@ class AddTodoActivity : BaseActivity<ActivityAddTodoBinding>(R.layout.activity_a
 
     override fun onSuccess() {
         Toast.makeText(baseContext,"성공",Toast.LENGTH_SHORT).show()
-        return
+        finish()
     }
 
     override fun onCancelClicked() {
-        return
+        finish()
     }
 
     override fun onFailure(message: String) {
