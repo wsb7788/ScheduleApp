@@ -8,6 +8,7 @@ import com.project.navmvvmpractice.data.entites.User
 import com.project.navmvvmpractice.data.remote.login.LoginListener
 import com.project.navmvvmpractice.data.remote.login.SignUpListener
 import com.project.navmvvmpractice.room.dao.Database
+import com.project.navmvvmpractice.util.DataStoreManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +17,7 @@ import javax.inject.Inject
 import kotlin.coroutines.coroutineContext
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(private val userDatabase:Database) : ViewModel() {
+class LoginViewModel @Inject constructor(private val userDatabase:Database, private val dataStoreManager: DataStoreManager) : ViewModel() {
 
     var loginListener: LoginListener? = null
     var signUpListener: SignUpListener? = null
@@ -33,6 +34,7 @@ class LoginViewModel @Inject constructor(private val userDatabase:Database) : Vi
                 val pw = pw.value
                 val result = userDatabase.userDao().findId(id!!)
                 if(result != null && result.pw == pw!!){
+                    dataStoreManager.saveId(id)
                     loginListener!!.onLoginSuccess()
                     return@launch
                 }

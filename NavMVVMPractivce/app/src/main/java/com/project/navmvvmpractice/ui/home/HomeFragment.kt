@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.*
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -87,7 +88,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
 
     }
 
-    override fun onTodoClicked() {
+    override fun onTodoClicked(message:String) {
+        Toast.makeText(requireContext(),message,Toast.LENGTH_SHORT).show()
         val intent = Intent(requireContext(),AddTodoActivity::class.java)
         startActivity(intent)
     }
