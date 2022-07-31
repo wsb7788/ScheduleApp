@@ -28,6 +28,8 @@ class AddTodoViewModel @Inject constructor(private val database: Database, priva
                 addTodoListener!!.onFailure("내용을 입력하세요.")
                 return@launch
             }
+
+
             try {
                 val id = dataStoreManager.getId()
                 database.todoDao().insert(Todo(id = id,task = todo))
