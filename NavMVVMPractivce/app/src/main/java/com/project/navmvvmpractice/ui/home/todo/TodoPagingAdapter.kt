@@ -26,7 +26,8 @@ class TodoPagingAdapter: PagingDataAdapter<Todo, TodoPagingAdapter.TodoViewHolde
         }
     }
 
-    inner class TodoViewHolder(val viewDataBinding: ViewHolderTodoBinding): RecyclerView.ViewHolder(viewDataBinding.root)
+    inner class TodoViewHolder(val viewDataBinding: ViewHolderTodoBinding):
+        RecyclerView.ViewHolder(viewDataBinding.root)
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         val data = getItem(position)

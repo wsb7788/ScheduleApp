@@ -19,9 +19,9 @@ import javax.inject.Inject
 @HiltViewModel
 class TodoViewModel @Inject constructor(private val database: Database, private val dataStoreManager: DataStoreManager ): ViewModel() {
 
-    val list = Pager(PagingConfig(3)){
+    val list = Pager(PagingConfig(10)){
         TodoPaging(database,dataStoreManager)
-    }.liveData.cachedIn(viewModelScope)
+    }.flow.cachedIn(viewModelScope)
 
 
 

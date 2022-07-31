@@ -26,7 +26,8 @@ class TodoPaging(private val database: Database, private val dataStoreManager: D
             if(page != 0) delay(1000)
             LoadResult.Page(
                 data = data,
-                prevKey = if(page == 1) null else page-1,
+                //prevKey = if(page == 1) null else page-1,
+                prevKey = null,
                 nextKey = if(data.isEmpty()) null else page + 1
             )
         }catch (e: Exception){
