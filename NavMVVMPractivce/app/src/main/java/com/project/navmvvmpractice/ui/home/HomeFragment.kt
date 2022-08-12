@@ -56,14 +56,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
     private fun initToolbar() {
         binding.tbHome.setNavigationIcon(R.drawable.ic_menu_icon)
         binding.tbHome.setNavigationOnClickListener{
-            binding.dlHome.openDrawer(binding.navHome)
+            binding.dlHome.openDrawer(binding.clDrawer)
         }
         binding.tbHome.setPadding(0,getStatusBarHeight(requireContext()), 0, 0)
+        binding.clInfo.setPadding(0,getStatusBarHeight(requireContext()), 0, 0)
         val param = binding.fcvHome.layoutParams as ViewGroup.MarginLayoutParams
         param.setMargins(0,0,0,getNaviBarHeight(requireContext()))
         binding.fcvHome.layoutParams = param
-
-
     }
     private fun getStatusBarHeight(context: Context): Int {
         val resourceId = context.resources.getIdentifier("status_bar_height", "dimen", "android")
