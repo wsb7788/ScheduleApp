@@ -13,6 +13,8 @@ import com.project.navmvvmpractice.databinding.ViewHolderTodoBinding
 
 class TodoPagingAdapter: PagingDataAdapter<Todo, TodoPagingAdapter.TodoViewHolder>(DIFF_UTIL) {
 
+    var onClick: ((Todo) -> Unit)? = null
+
     companion object {
         val DIFF_UTIL = object : DiffUtil.ItemCallback<Todo>() {
             override fun areItemsTheSame(oldItem: Todo, newItem: Todo): Boolean {
@@ -25,6 +27,9 @@ class TodoPagingAdapter: PagingDataAdapter<Todo, TodoPagingAdapter.TodoViewHolde
 
         }
     }
+    fun onClicked(listener: (Todo) -> Unit){
+        onClick = listener
+    }
 
     inner class TodoViewHolder(val viewDataBinding: ViewHolderTodoBinding):
         RecyclerView.ViewHolder(viewDataBinding.root)
@@ -32,6 +37,12 @@ class TodoPagingAdapter: PagingDataAdapter<Todo, TodoPagingAdapter.TodoViewHolde
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         val data = getItem(position)
         holder.viewDataBinding.setVariable(1,data)
+
+        holder.viewDataBinding.root.setOnClickListener {
+            onClick?.let{
+                it(data!!)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
