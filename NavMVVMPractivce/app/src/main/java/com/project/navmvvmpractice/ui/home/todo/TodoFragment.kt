@@ -25,17 +25,17 @@ class TodoFragment : BaseFragment<FragmentTodoBinding>(R.layout.fragment_todo), 
 
     override fun initView() {
 
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         viewModel.todoListener = this
 
         initRecycler()
+
 
 
     }
 
     private fun initRecycler(){
         binding.rcvTodo.apply {
-            layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
             adapter = pagingAdapter
         }
 

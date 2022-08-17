@@ -30,14 +30,18 @@ class TodoViewModel @Inject constructor(private val database: Database, private 
 
 
     fun onItemClicked(data: Todo) {
-        CoroutineScope(Dispatchers.Main).launch{
+        viewModelScope.launch{
             try {
 
                 database.todoDao().update(Todo(data.index,data.id,data.task, !data.complete ))
-                todoListener!!.onSuccess("성공욤")
+                todoListener?.let {
+                    it.onSuccess("성공")
+                }
 
             }catch (e:Exception){
-                todoListener!!.onFailure(e.message!!)
+                todoListener?.let {
+                    it.onFailure(e.message!!)
+                }
             }
         }
 
