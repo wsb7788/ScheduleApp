@@ -22,11 +22,15 @@ class HomeViewModel @Inject constructor():ViewModel() {
         isExpended.value = !value!!
     }
      fun onTodoClicked(){
-
+         val value = isExpended.value
          homeListener!!.onTodoClicked()
+         isExpended.value = !value!!
+
      }
      fun onAlarmClicked(){
+         val value = isExpended.value
         homeListener!!.onAlarmClicked()
+         isExpended.value = !value!!
     }
 
 

@@ -49,7 +49,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
 
     private fun initNav() {
         val asd = childFragmentManager.findFragmentById(R.id.fcv_home) as NavHostFragment
+
         NavigationUI.setupWithNavController(binding.navHome,asd.navController)
+
+        binding.navHome.setNavigationItemSelectedListener {
+            asd.navController.navigate(it.itemId)
+            binding.dlHome.closeDrawer(binding.clDrawer)
+            true
+        }
 
     }
 
@@ -58,12 +65,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
         binding.tbHome.setNavigationOnClickListener{
             binding.dlHome.openDrawer(binding.clDrawer)
         }
+
         binding.tbHome.setPadding(0,getStatusBarHeight(requireContext()), 0, 0)
         binding.clInfo.setPadding(0,getStatusBarHeight(requireContext()), 0, 0)
+
         val param = binding.fcvHome.layoutParams as ViewGroup.MarginLayoutParams
         param.setMargins(0,0,0,getNaviBarHeight(requireContext()))
         binding.fcvHome.layoutParams = param
     }
+
     private fun getStatusBarHeight(context: Context): Int {
         val resourceId = context.resources.getIdentifier("status_bar_height", "dimen", "android")
 
