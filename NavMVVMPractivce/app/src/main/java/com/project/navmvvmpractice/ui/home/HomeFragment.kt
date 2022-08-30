@@ -2,11 +2,16 @@ package com.project.navmvvmpractice.ui.home
 
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.view.*
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.project.navmvvmpractice.base.BaseFragment
@@ -15,6 +20,8 @@ import com.project.navmvvmpractice.data.remote.home.HomeListener
 import com.project.navmvvmpractice.databinding.FragmentHomeBinding
 import com.project.navmvvmpractice.ui.home.todo.AddTodoActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 
 @AndroidEntryPoint
@@ -27,9 +34,23 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home), 
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
+        viewModel.loadUiState()
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
+                viewModel.uiState.collect{
+                    binding.tvTest.text = it.id + "님 반갑습니다."
+                }
+            }
+        }
+
         initNav()
         initToolbar()
         observePlus()
+
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
     }
 
