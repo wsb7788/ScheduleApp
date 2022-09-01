@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="com.project.navmvvmpractice.data.entites.Todo"/>
+        <import type="com.project.SchedulerApp.data.entites.Todo"/>
         <variable
             name="todo"
             type="Todo" />

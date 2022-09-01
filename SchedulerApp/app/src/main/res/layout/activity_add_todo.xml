@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.project.navmvvmpractice.ui.home.todo.AddTodoViewModel" />
+            type="com.project.SchedulerApp.ui.home.todo.AddTodoViewModel" />
 
     </data>
 

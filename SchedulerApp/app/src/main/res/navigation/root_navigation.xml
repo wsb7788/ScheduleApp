@@ -8,7 +8,7 @@
     <include app:graph="@navigation/home_navigation" />
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.project.navmvvmpractice.ui.splash.SplashFragment"
+        android:name="com.project.SchedulerApp.ui.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action

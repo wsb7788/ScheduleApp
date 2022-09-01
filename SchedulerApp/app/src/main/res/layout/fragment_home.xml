@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.project.navmvvmpractice.ui.home.HomeViewModel" />
+            type="com.project.SchedulerApp.ui.home.HomeViewModel" />
 
     </data>
 

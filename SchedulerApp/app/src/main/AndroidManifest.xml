@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.project.navmvvmpractice">
+    package="com.project.SchedulerApp">
 
     <application
-        android:name=".base.BaseClass"
+        android:name="com.project.SchedulerApp.base.BaseClass"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,7 +12,7 @@
         android:theme="@style/Theme.NavMVVMPractice">
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.project.SchedulerApp.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.SeeMeet.TransparentStatusBar">
             <intent-filter>
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.home.todo.AddTodoActivity"
+            android:name="com.project.SchedulerApp.ui.home.todo.AddTodoActivity"
             android:exported="false" />
     </application>
 

@@ -6,17 +6,17 @@
     app:startDestination="@id/TodoFragment">
     <fragment
         android:id="@+id/TodoFragment"
-        android:name="com.project.navmvvmpractice.ui.home.todo.TodoFragment"
+        android:name="com.project.SchedulerApp.ui.home.todo.TodoFragment"
         android:label="FirstFragment"
         tools:layout="@layout/fragment_todo" />
     <fragment
         android:id="@+id/secondFragment"
-        android:name="com.project.navmvvmpractice.ui.home.second.SecondFragment"
+        android:name="com.project.SchedulerApp.ui.home.second.SecondFragment"
         android:label="SecondFragment"
         tools:layout="@layout/fragment_second" />
     <fragment
         android:id="@+id/thirdFragment"
-        android:name="com.project.navmvvmpractice.ui.home.third.ThirdFragment"
+        android:name="com.project.SchedulerApp.ui.home.third.ThirdFragment"
         android:label="ThirdFragment"
         tools:layout="@layout/fragment_third" />
 </navigation>
