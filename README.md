@@ -1,2 +1,2 @@
-# Example
-각 예제는 Readme 참조
+# SchedulerApp
+개인 Project입니다.
